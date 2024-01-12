@@ -101,19 +101,20 @@ Sys.setlocale('LC_CTYPE', 'greek')
 results_df=data.frame(seq(0.1,0.9,0.1), power_Alpha, FWER_Alpha, power_ADDIS_Graph,FWER_ADDIS_Graph,power_I_ADDIS_Graph,FWER_I_ADDIS_Graph)
 
 p1=ggplot(results_df, aes(seq.0.1..0.9..0.1.)) + 
-  geom_line(aes(y = power_Alpha, colour = "Alpha-Spending")) + 
+  geom_line(aes(y = power_Alpha, colour = "Alpha-Spending",linetype="1")) + 
   geom_point(aes(y = power_Alpha, colour = "Alpha-Spending", shape = "Alpha-Spending")) +
-  geom_line(aes(y = FWER_Alpha, colour = "Alpha-Spending"))+
+  geom_line(aes(y = FWER_Alpha, colour = "Alpha-Spending",linetype="2"))+
   geom_point(aes(y = FWER_Alpha, colour = "Alpha-Spending", shape = "Alpha-Spending"))+
-  geom_line(aes(y = power_ADDIS_Graph, colour = "ADDIS-Graph")) + 
+  geom_line(aes(y = power_ADDIS_Graph, colour = "ADDIS-Graph",linetype="1")) + 
   geom_point(aes(y = power_ADDIS_Graph, colour = "ADDIS-Graph", shape = "ADDIS-Graph")) +
-  geom_line(aes(y = FWER_ADDIS_Graph, colour = "ADDIS-Graph"))+
+  geom_line(aes(y = FWER_ADDIS_Graph, colour = "ADDIS-Graph",linetype="2"))+
   geom_point(aes(y = FWER_ADDIS_Graph, colour = "ADDIS-Graph", shape = "ADDIS-Graph"))+
-  geom_line(aes(y = power_I_ADDIS_Graph, colour = "EI-ADDIS-Graph")) + 
+  geom_line(aes(y = power_I_ADDIS_Graph, colour = "EI-ADDIS-Graph",linetype="1")) + 
   geom_point(aes(y = power_I_ADDIS_Graph, colour = "EI-ADDIS-Graph", shape = "EI-ADDIS-Graph")) +
-  geom_line(aes(y = FWER_I_ADDIS_Graph, colour = "EI-ADDIS-Graph"))+
+  geom_line(aes(y = FWER_I_ADDIS_Graph, colour = "EI-ADDIS-Graph",linetype="2"))+
   geom_point(aes(y = FWER_I_ADDIS_Graph, colour = "EI-ADDIS-Graph", shape = "EI-ADDIS-Graph"))+
   geom_hline(yintercept=alpha)+
+  scale_linetype_manual(guide="none", values = c("1"="solid","2"="dashed"))+
   scale_shape_manual(name  ="Procedure",values=c("Alpha-Spending"=8,"ADDIS-Graph"=16,"EI-ADDIS-Graph"=17))+
   scale_color_manual(name  ="Procedure", values = c("Alpha-Spending"=cols[1],"ADDIS-Graph"=cols[2],"EI-ADDIS-Graph"=cols[3]))+
   xlab(expression(pi[A]))+
@@ -203,19 +204,20 @@ Sys.setlocale('LC_CTYPE', 'greek')
 results_df=data.frame(seq(0.1,0.9,0.1), power_Alpha, FWER_Alpha, power_ADDIS_Graph,FWER_ADDIS_Graph,power_I_ADDIS_Graph,FWER_I_ADDIS_Graph)
 
 p2=ggplot(results_df, aes(seq.0.1..0.9..0.1.)) + 
-  geom_line(aes(y = power_Alpha, colour = "Alpha-Spending")) + 
+  geom_line(aes(y = power_Alpha, colour = "Alpha-Spending",linetype="1")) + 
   geom_point(aes(y = power_Alpha, colour = "Alpha-Spending", shape = "Alpha-Spending")) +
-  geom_line(aes(y = FWER_Alpha, colour = "Alpha-Spending"))+
+  geom_line(aes(y = FWER_Alpha, colour = "Alpha-Spending",linetype="2"))+
   geom_point(aes(y = FWER_Alpha, colour = "Alpha-Spending", shape = "Alpha-Spending"))+
-  geom_line(aes(y = power_ADDIS_Graph, colour = "ADDIS-Graph")) + 
+  geom_line(aes(y = power_ADDIS_Graph, colour = "ADDIS-Graph",linetype="1")) + 
   geom_point(aes(y = power_ADDIS_Graph, colour = "ADDIS-Graph", shape = "ADDIS-Graph")) +
-  geom_line(aes(y = FWER_ADDIS_Graph, colour = "ADDIS-Graph"))+
+  geom_line(aes(y = FWER_ADDIS_Graph, colour = "ADDIS-Graph",linetype="2"))+
   geom_point(aes(y = FWER_ADDIS_Graph, colour = "ADDIS-Graph", shape = "ADDIS-Graph"))+
-  geom_line(aes(y = power_I_ADDIS_Graph, colour = "EI-ADDIS-Graph")) + 
+  geom_line(aes(y = power_I_ADDIS_Graph, colour = "EI-ADDIS-Graph",linetype="1")) + 
   geom_point(aes(y = power_I_ADDIS_Graph, colour = "EI-ADDIS-Graph", shape = "EI-ADDIS-Graph")) +
-  geom_line(aes(y = FWER_I_ADDIS_Graph, colour = "EI-ADDIS-Graph"))+
+  geom_line(aes(y = FWER_I_ADDIS_Graph, colour = "EI-ADDIS-Graph",linetype="2"))+
   geom_point(aes(y = FWER_I_ADDIS_Graph, colour = "EI-ADDIS-Graph", shape = "EI-ADDIS-Graph"))+
   geom_hline(yintercept=alpha)+
+  scale_linetype_manual(guide="none", values = c("1"="solid","2"="dashed"))+
   scale_shape_manual(name  ="Procedure",values=c("Alpha-Spending"=8,"ADDIS-Graph"=16,"EI-ADDIS-Graph"=17))+
   scale_color_manual(name  ="Procedure", values = c("Alpha-Spending"=cols[1],"ADDIS-Graph"=cols[2],"EI-ADDIS-Graph"=cols[3]))+
   xlab(expression(pi[A]))+
