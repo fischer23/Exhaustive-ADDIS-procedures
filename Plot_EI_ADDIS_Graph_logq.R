@@ -2,7 +2,6 @@ rm(list=ls())
 library(ggplot2)
 library(patchwork)
 ###load the procedures
-getwd()
 source("Exhaustive_Procedures.R")
 
 ###Gaussian testing problem for exact p-values
