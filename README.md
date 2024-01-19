@@ -2,6 +2,8 @@
 
 This repository contains all the code used for the simulations and real data applications in the paper "Exhaustive ADDIS procedures". In the aforementioned paper, we introduced exhaustive ADDIS procedures for online multiple testing that uniformly improve the existing ADDIS procedures by Tian & Ramdas (2021). All procedures control the FWER strongly under independence of the null $p$-values. 
 
+
+
 Files:
 
 exhaustive_procedures.R: Contains all applied online procedures. 
@@ -15,6 +17,8 @@ plot_real_data.R: Real data application based on the data in IMPC_data.R. Genera
 IMPC_data.csv: Contains 5000 observations from a full data set available at a Zenodo repository organized by Robertson et al. (2018) (https://doi.org/10.5281/zenodo.2396572). 
 
 results folder: Contains all the results that were provided in the paper.
+
+
 
 Version information:
 R version 4.2.2 (2022-10-31 ucrt)
