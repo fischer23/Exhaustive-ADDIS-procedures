@@ -5,10 +5,15 @@ This repository contains all the code used for the simulations and real data app
 Files:
 
 exhaustive_procedures.R: Contains all applied online procedures. 
+
 plot_generating_function.R: Implements the simulation setting of Section 5.
+
 plot_creator.R: Generates Figures 3-5 of the paper and saves the results in the results folder. 
+
 plot_real_data.R: Real data application based on the data in IMPC_data.R. Generates Figure 6 of the paper and saves it to the results folder.
+
 IMPC_data.csv: Contains 5000 observations from a full data set available at a Zenodo repository organized by Robertson et al. (2018) (https://doi.org/10.5281/zenodo.2396572). 
+
 results folder: Contains all the results that were provided in the paper.
 
 Version information:
