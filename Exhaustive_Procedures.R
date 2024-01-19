@@ -1,15 +1,18 @@
-###This R-file contains the procedures that were used for the simulations in the paper "Exhaustive ADDIS procedures for online FWER control"
+###This R-file contains the procedures that were used for the simulations and
+###real data application in the paper "Exhaustive ADDIS procedures for online FWER control"
 
 #Input (at most): alpha, gamma, w, tau, lambda,lags, p, n. 
 
 #alpha: overall significance level. Number between 0 and 1
-#gamma: Weights for Alpha-Spending. Non-negative n-dimensional vector with sum less than 1.
+#gamma: Initial weights for all procedures. Non-negative n-dimensional vector with sum less than 1.
 #w:     Weights for graphical procedures. Upper triangle n x n matrix with row sum less than 1
-#tau:   Used for discarding procedures. n-dimensional vector with values between 0 and 1. Besides, it can be chosen as a fixed number between 0 and 1.
-#lambda:Used for the adaptive procedures. n-dimensional vector with values between 0 and tau_i for adaptive procedures or tau_i*alpha^(i) and tau_i for exhaustive adaptive procedures. Besides, it can be chosen as a fixed number fulfilling these conditions.
+#tau:   Used for ADDIS procedures. n-dimensional vector with values between 0 and 1. Besides, it can be chosen as a fixed number between 0 and 1.
+#lambda:Used for the ADDIS procedures. n-dimensional vector with values in [0, tau_i) for ADDIS procedures or [tau_i*alpha^(i), tau_i) for exhaustive adaptive procedures. Besides, it can be chosen as a fixed number fulfilling these conditions.
 #lags:  Representing the given local dependence structure. n-dimensional vector of natural numbers (including 0) or a fix natural number (including 0). Choose lags=0 for independence.
 #p:     n-dimensional vector of p-values. 
 #n:     Number of hypotheses.
+
+#Output: Vector with length n of individual significance levels.
 
 #ADDIS-Spending under local dependence
 ADDIS_Spending=function(alpha, gamma, tau, lambda,lags, p, n){
